@@ -20,4 +20,15 @@ export class NoteItemComponent implements OnInit {
     }
     return classes;
   }
+
+  onToggle(note) {
+    console.log('toggle');
+    note.completed = !note.completed
+  }
+
+  onDelete(note) {
+    console.log('delete');
+    
+  }
+
 }
