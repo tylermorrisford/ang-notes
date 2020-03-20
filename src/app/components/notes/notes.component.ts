@@ -15,7 +15,7 @@ export class NotesComponent implements OnInit {
       {
         id:1,
         title: 'Build an Angular project',
-        completed: false,
+        completed: true,
       },
       {
         id:2,
