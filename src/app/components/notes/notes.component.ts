@@ -12,7 +12,6 @@ export class NotesComponent implements OnInit {
 
   constructor(private noteService:NoteService) {
 
-
    }
 
   ngOnInit() {
@@ -24,6 +23,12 @@ export class NotesComponent implements OnInit {
   deleteNote(note:Note) {
     this.notes = this.notes.filter(n => n.id !== note.id);
     this.noteService.deleteNote(note).subscribe();
+  }
+
+  addNote(note:Note) {
+    this.noteService.addNote(note).subscribe(note => {
+      this.notes.push(note);
+    })
   }
 
 }

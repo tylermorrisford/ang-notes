@@ -32,6 +32,9 @@ export class NoteService {
     return this.http.put(url, note, httpOptions)
   }
   
+  addNote(note:Note):Observable<Note> {
+    return this.http.post<Note>(this.notesUrl, note, httpOptions);
+  }
 
 }
 
