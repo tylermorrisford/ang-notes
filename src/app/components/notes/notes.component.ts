@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Note } from '../../models/Note';
+import { NoteService } from 'src/app/services/note.service';
 
 @Component({
   selector: 'app-notes',
@@ -8,31 +9,20 @@ import { Note } from '../../models/Note';
 })
 export class NotesComponent implements OnInit {
   notes:Note[];
-  constructor() { }
+
+  constructor(private noteService:NoteService) {
+
+
+   }
 
   ngOnInit() {
-    this.notes = [
-      {
-        id:1,
-        title: 'Build an Angular project',
-        completed: true,
-      },
-      {
-        id:2,
-        title: 'Practice Typescript',
-        completed: false,
-      },
-      {
-        id:3,
-        title: 'Learn Alpine Js',
-        completed: false,
-      },
-      {
-        id:4,
-        title: 'Play with Python',
-        completed: false,
-      },
-    ]
+    this.noteService.getNotes().subscribe(notes => {
+      this.notes = notes;
+    })
+  }
+
+  deleteNote(note:Note) {
+    this.notes = this.notes.filter(n => n.id !== note.id);
   }
 
 }

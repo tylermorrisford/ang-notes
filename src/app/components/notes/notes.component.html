@@ -1,2 +1,6 @@
-<app-note-item *ngFor="let note of notes" [note]="note">
+<app-note-item 
+*ngFor="let note of notes" 
+[note]="note"
+(deleteNote)="deleteNote($event)"
+>
 </app-note-item>
