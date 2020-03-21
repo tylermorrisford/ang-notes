@@ -1,6 +1,8 @@
 # AngularNotesApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
+This project uses Typescript & Angular, along with JSON Placeholder data, to create/update/delete notes.
+
+This app was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
 
 ## Development server
 
