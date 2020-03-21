@@ -21,6 +21,11 @@ export class NoteService {
   getNotes():Observable<Note[]> {
     return this.http.get<Note[]>(`${this.notesUrl}${this.notesLimit}`);
   }
+
+  deleteNote(note:Note):Observable<Note> {
+    const url = `${this.notesUrl}/${note.id}`
+    return this.http.delete<Note>(url, httpOptions);
+  }
   
   toggleCompleted(note: Note):Observable<any> {
     const url = `${this.notesUrl}/${note.id}`

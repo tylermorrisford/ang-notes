@@ -23,6 +23,7 @@ export class NotesComponent implements OnInit {
 
   deleteNote(note:Note) {
     this.notes = this.notes.filter(n => n.id !== note.id);
+    this.noteService.deleteNote(note).subscribe();
   }
 
 }
